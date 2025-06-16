@@ -1,8 +1,11 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+// import typescriptLogo from './typescript.svg'
+// import viteLogo from '/vite.svg'
+// import { setupCounter } from './counter.ts'
 
+
+console.log("Hello 'Skew effect'");
+/*
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
@@ -22,3 +25,4 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+*/
