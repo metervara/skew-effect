@@ -14,23 +14,30 @@
   overflow: hidden;
 
   &.left {
-    transform: translateX(calc(var(--centerX) - 100vw));
+    transform-origin: right center;
+    transform: translateX(calc(var(--centerX) - 100vw)) skewY(calc(var(--centerNormalizedY) * 45deg));
+    /* transform: translateX(calc(var(--centerX) - 100vw)); */
     
     /* border: 1px solid red; */
     .skew-clone {
       position: absolute;
+      transform: translateX(calc(-1 * (var(--centerX) - 100vw) - var(--centerNormalizedX) * 10vw)) translateY(calc(var(--centerNormalizedY) * 20vw));
+
+      /* background-color: blanchedalmond; */
     }
   }
 
   &.right {
-    transform: translateX(var(--centerX));
+    transform-origin: left center;
+    transform: translateX(var(--centerX)) skewY(calc(var(--centerNormalizedY) * -45deg));
+    /* transform: translateX(var(--centerX)); */
     
     /* border: 1px solid green; */
     .skew-clone {
       position: absolute;
+      transform: translateX(calc(-1 * var(--centerX) - var(--centerNormalizedX) * 10vw)) translateY(calc(var(--centerNormalizedY) * 20vw));
       
-      background-color: pink;
-      /* transform: translateX(calc(-1 * var(--centerX))); */
+      /* background-color: pink; */
     }
   }
 }

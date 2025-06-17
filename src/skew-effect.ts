@@ -71,9 +71,9 @@ const loop = (time: Number): void => {
 
   wrapper?.style.setProperty("--centerX", `${softX}px`);
   wrapper?.style.setProperty("--centerY", `${softY}px`);
-
-  wrapper?.style.setProperty("--centerNormalizedX", `${(softX / window.innerWidth) * 2 - 1}px`);
-  wrapper?.style.setProperty("--centerNormalizedY", `${(softY / window.innerHeight) * 2 - 1}px`); // TODO: MEasure a div using dvh? So it doesn't change when scrolling on mobile
+  
+  wrapper?.style.setProperty("--centerNormalizedX", `${(softX / window.innerWidth) * 2 - 1}`);
+  wrapper?.style.setProperty("--centerNormalizedY", `${(softY / window.innerHeight) * 2 - 1}`); // TODO: MEasure a div using dvh? So it doesn't change when scrolling on mobile
 
   requestId = requestAnimationFrame(loop);
 };
@@ -86,6 +86,9 @@ const mouse = (event: MouseEvent): void => {
 const resize = (): void => {
   console.log("resize");
   const rect = targetElement.getBoundingClientRect();
+  
+  // console.log(rect.width, rect.height)
+  
   leftCloneElement.style.left = `${rect.left}px`;
   leftCloneElement.style.top = `${rect.top}px`;
   leftCloneElement.style.width = `${rect.width}px`;
