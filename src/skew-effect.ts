@@ -5,14 +5,14 @@ let requestId: number | null = null;
 let wrapper: HTMLElement;
 let leftElement: HTMLElement;
 let rightElement: HTMLElement;
-let leftInnerElement: HTMLElement;
-let rightInnerElement: HTMLElement;
+let leftCloneElement: HTMLElement;
+let rightCloneElement: HTMLElement;
 
 let mouseX: number;
 let mouseY: number;
 let softX: number;
 let softY: number;
-const ease: number = 0.1;
+const ease: number = 0.05;
 
 export const initSkewEffect = (targetEl: HTMLElement): void => {
   targetElement = targetEl;
@@ -21,8 +21,8 @@ export const initSkewEffect = (targetEl: HTMLElement): void => {
     console.error("Target element does not have a parent");
     return;
   }
-  // console.log(targetElement);
   createEffectElements();
+  targetElement.style.visibility = "hidden";
 
   window.addEventListener("resize", resize);
   window.addEventListener("mousemove", mouse);
@@ -45,12 +45,20 @@ const createEffectElements = (): void => {
   wrapper.classList.add("skew-wrapper");
   parentElement?.appendChild(wrapper);
 
+  // console.log(rect);
+
   leftElement = document.createElement("div");
   leftElement.classList.add("skew-side", "left");
+  leftCloneElement = targetElement.cloneNode(true) as HTMLElement;
+  leftCloneElement.classList.add("skew-clone");
+  leftElement.appendChild(leftCloneElement);
   wrapper.appendChild(leftElement);
 
   rightElement = document.createElement("div");
   rightElement.classList.add("skew-side", "right");
+  rightCloneElement = targetElement.cloneNode(true) as HTMLElement;
+  rightCloneElement.classList.add("skew-clone");
+  rightElement.appendChild(rightCloneElement);
   wrapper.appendChild(rightElement);
 };
 
@@ -77,4 +85,14 @@ const mouse = (event: MouseEvent): void => {
 
 const resize = (): void => {
   console.log("resize");
+  const rect = targetElement.getBoundingClientRect();
+  leftCloneElement.style.left = `${rect.left}px`;
+  leftCloneElement.style.top = `${rect.top}px`;
+  leftCloneElement.style.width = `${rect.width}px`;
+  leftCloneElement.style.height = `${rect.height}px`;
+
+  rightCloneElement.style.left = `${rect.left}px`;
+  rightCloneElement.style.top = `${rect.top}px`;
+  rightCloneElement.style.width = `${rect.width}px`;
+  rightCloneElement.style.height = `${rect.height}px`;
 };

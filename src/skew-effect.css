@@ -4,7 +4,7 @@
   box-sizing: border-box;
   overflow: hidden;
 
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .skew-side {
@@ -14,10 +14,23 @@
   overflow: hidden;
 
   &.left {
-  border: 1px solid red;
+    transform: translateX(calc(var(--centerX) - 100vw));
+    
+    /* border: 1px solid red; */
+    .skew-clone {
+      position: absolute;
+    }
   }
 
   &.right {
-  border: 1px solid green;
+    transform: translateX(var(--centerX));
+    
+    /* border: 1px solid green; */
+    .skew-clone {
+      position: absolute;
+      
+      background-color: pink;
+      /* transform: translateX(calc(-1 * var(--centerX))); */
+    }
   }
 }
