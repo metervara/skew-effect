@@ -18,11 +18,22 @@
   inset: 0;
   box-sizing: border-box;
   overflow: hidden;
+  
+  animation: 100s linear calc(-100s * var(--normalizedY)) paused tint;
+
+  /* mark {
+    animation: 100s linear calc(-100s * var(--normalizedY)) paused tint-mark;
+  } */
 
   &.left {
     transform-origin: right center;
     transform: translateX(calc(var(--centerX) - 100vw)) skewY(calc(var(--centerNormalizedY) * var(--skew-angle)));
     /* transform: translateX(calc(var(--centerX) - 100vw)); */
+
+    animation-direction: reverse;
+    /* mark {
+      animation-direction: reverse;
+    } */
     
     /* border: 1px solid red; */
     .skew-clone {
@@ -45,5 +56,26 @@
       
       /* background-color: pink; */
     }
+  }
+}
+
+@keyframes tint {
+  0% {
+    color: #ec2c70; /* #ec5a2c; */
+  }
+  50% {
+    color: #d5afe7;
+  }
+  100% {
+    color: #d335c2;
+  }
+}
+
+@keyframes tint-mark {
+  0% {
+    background-color: pink;
+  }
+  100% {
+    background-color: lightblue;
   }
 }

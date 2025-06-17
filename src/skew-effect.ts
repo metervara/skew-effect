@@ -74,6 +74,8 @@ const loop = (_: Number): void => {
   wrapper?.style.setProperty("--centerNormalizedX", `${(softX / window.innerWidth) * 2 - 1}`);
   wrapper?.style.setProperty("--centerNormalizedY", `${(softY / window.innerHeight) * 2 - 1}`); // TODO: MEasure a div using dvh? So it doesn't change when scrolling on mobile
 
+  wrapper?.style.setProperty("--normalizedY", `${(Math.max(0, Math.min(1, softY / window.innerHeight)))}`); // TODO: MEasure a div using dvh? So it doesn't change when scrolling on mobile
+
   requestAnimationFrame(loop);
 };
 
