@@ -1,0 +1,23 @@
+.skew-wrapper {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  border: 1px solid blue;
+}
+
+.skew-side {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &.left {
+  border: 1px solid red;
+  }
+
+  &.right {
+  border: 1px solid green;
+  }
+}
