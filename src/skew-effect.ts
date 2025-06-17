@@ -1,6 +1,5 @@
 let targetElement: HTMLElement;
 let parentElement: HTMLElement | null;
-let requestId: number | null = null;
 
 let wrapper: HTMLElement;
 let leftElement: HTMLElement;
@@ -34,7 +33,7 @@ export const initSkewEffect = (targetEl: HTMLElement): void => {
 
   resize();
 
-  requestId = requestAnimationFrame(loop);
+  requestAnimationFrame(loop);
 };
 
 /**
@@ -65,7 +64,7 @@ const createEffectElements = (): void => {
 /**
  * Event handlers
  */
-const loop = (time: Number): void => {
+const loop = (_: Number): void => {
   softX += (mouseX - softX) * ease;
   softY += (mouseY - softY) * ease;
 
@@ -75,7 +74,7 @@ const loop = (time: Number): void => {
   wrapper?.style.setProperty("--centerNormalizedX", `${(softX / window.innerWidth) * 2 - 1}`);
   wrapper?.style.setProperty("--centerNormalizedY", `${(softY / window.innerHeight) * 2 - 1}`); // TODO: MEasure a div using dvh? So it doesn't change when scrolling on mobile
 
-  requestId = requestAnimationFrame(loop);
+  requestAnimationFrame(loop);
 };
 
 const mouse = (event: MouseEvent): void => {
