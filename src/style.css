@@ -43,13 +43,13 @@ body {
   background-size: 5vw 5vw;
   background-repeat: repeat; */
 
-  /* background-image:
+  background-image:
   radial-gradient(circle at 30% 40%, #c370c4, #abb6be 70%);
       
     background-size:
       100% 100%;
     background-repeat:
-     no-repeat; */
+     no-repeat;
 }
 
 h1 {

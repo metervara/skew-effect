@@ -19,6 +19,8 @@
   box-sizing: border-box;
   overflow: hidden;
   
+  /* will-change: transform, color; */
+  
   animation: 100s linear calc(-100s * var(--normalizedY)) paused tint;
 
   /* mark {
