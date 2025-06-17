@@ -12,7 +12,7 @@ let mouseX: number;
 let mouseY: number;
 let softX: number;
 let softY: number;
-const ease: number = 0.05;
+const ease: number = 0.1;
 
 export const initSkewEffect = (targetEl: HTMLElement): void => {
   targetElement = targetEl;
