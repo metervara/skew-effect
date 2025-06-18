@@ -7,6 +7,7 @@ import { initSkewEffect } from './skew-effect';
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Dom ready, setting up skew effect");
   const app = document.getElementById("app")!;
   initSkewEffect(app);
 });

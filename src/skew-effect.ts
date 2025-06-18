@@ -85,8 +85,9 @@ const mouse = (event: MouseEvent): void => {
 };
 
 const resize = (): void => {
-  console.log("resize");
   const rect = targetElement.getBoundingClientRect();
+
+  console.log("resize, measure", rect);
   
   // console.log(rect.width, rect.height)
   
