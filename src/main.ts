@@ -6,8 +6,10 @@ import { initSkewEffect } from './skew-effect';
 // import { setupCounter } from './counter.ts'
 
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
   console.log("Dom ready, setting up skew effect");
   const app = document.getElementById("app")!;
   initSkewEffect(app);
-});
+};
+// });
